@@ -1,4 +1,4 @@
-# 🤖 Multilingual AI Receptionist
+# Multilingual AI Receptionist 🤖 
 
 A real-time multilingual (English, Hindi, and Marathi) AI receptionist built using FastAPI, Next.js, WebSockets, Ollama, and Browser Speech Synthesis. It recieves text responses and and give text and speech output simulteneously.
 
@@ -143,8 +143,7 @@ http://localhost:3000
 
 ## Author
 
-**Navya Sharma**
-
+Navya Sharma
 ---
 
 ## License
