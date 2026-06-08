@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+env/
+
+# Mac
+.DS_Store
+
+# Node
+node_modules/
+
+# Next.js
+.next/
+
+# Logs
+*.log
+
+# Environment Variables
+.env
+
+# Audio Files
+backend/static/
+
+# Ollama Models
+models/
