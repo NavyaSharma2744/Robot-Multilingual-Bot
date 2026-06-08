@@ -1,98 +1,56 @@
-# Multilingual AI Receptionist
+# 🤖 Multilingual AI Receptionist
 
-## Overview
-
-Multilingual AI Receptionist is a real-time conversational assistant designed as a prototype for a robotic receptionist system. The application supports English, Hindi, and Marathi interactions through a web interface and provides voice responses without generating or storing audio files.
-
-The system uses a local Large Language Model (LLM) running through Ollama and browser-based speech synthesis for low-latency voice output.
-
----
-
-## Features
-
-### Multilingual Conversation
-
-* English support
-* Hindi support
-* Marathi support
-* Automatic language-aware responses
-
-### Real-Time Communication
-
-* FastAPI WebSocket backend
-* Real-time message exchange
-* Low response latency
-
-### Voice Interaction
-
-* Browser Speech Synthesis API
-* No audio files generated
-* No audio storage required
-* Near-instant voice playback
-
-### AI Receptionist Behavior
-
-* Responds as a receptionist
-* Short and conversational responses
-* Supports admission and information-related queries
-* Can be extended using Retrieval Augmented Generation (RAG)
-
----
-
-## Technology Stack
-
-### Frontend
-
-* Next.js
-* React
-* TypeScript
-* Tailwind CSS
-* Web Speech API
-
-### Backend
-
-* FastAPI
-* WebSockets
-* Python
-
-### AI Model
-
-* Ollama
-* Qwen / Llama Models
+A real-time multilingual (English, Hindi, and Marathi) AI receptionist built using FastAPI, Next.js, WebSockets, Ollama, and Browser Speech Synthesis. It recieves text responses and and give text and speech output simulteneously.
 
 ---
 
 ## System Architecture
 
+```text
 User Input
-
-↓
-
-Frontend (Next.js)
-
-↓
-
-WebSocket
-
-↓
-
+      │
+      ▼
+Next.js Frontend
+      │
+      ▼
+WebSocket Connection
+      │
+      ▼
 FastAPI Backend
-
-↓
-
+      │
+      ▼
 Ollama LLM
-
-↓
-
-Text Response
-
-↓
-
+      │
+      ▼
+Generated Response
+      │
+      ▼
 Browser Speech Synthesis
-
-↓
-
+      │
+      ▼
 Voice Output
+```
+
+---
+
+## Tech Stack
+
+### Frontend
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Web Speech API
+
+### Backend
+- FastAPI
+- WebSockets
+- Python
+
+### AI Layer
+- Ollama
+- Llama / Qwen Models
+- Prompt Engineering
 
 ---
 
@@ -101,22 +59,28 @@ Voice Output
 ```text
 Robot-Multilingual-Bot/
 
+├── README.md
+├── .gitignore
+│
 ├── frontend/
 │   ├── app/
-│   │   └── page.tsx
-│   ├── public/
-│   └── package.json
-│
-├── backend/
-│   ├── ai/
-│   │   └── llm.py
+│   │   ├── page.tsx
+│   │   ├── layout.tsx
+│   │   └── globals.css
 │   │
-│   ├── main.py
-│   ├── requirements.txt
-│   └── env/
+│   ├── package.json
+│   ├── next.config.ts
+│   └── tsconfig.json
 │
-└── README.md
+└── backend/
+    ├── ai/
+    │   └── llm.py
+    │
+    ├── main.py
+    └── requirements.txt
 ```
+
+---
 
 ### Backend Setup
 
@@ -130,9 +94,13 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
+---
+
 ### Install Ollama
 
-Download and install Ollama.
+Download and install Ollama:
+
+https://ollama.com
 
 Pull a model:
 
@@ -140,11 +108,7 @@ Pull a model:
 ollama pull llama3.2:3b
 ```
 
-or
-
-```bash
-ollama pull qwen2.5:3b
-```
+---
 
 ### Start Backend
 
@@ -152,11 +116,13 @@ ollama pull qwen2.5:3b
 uvicorn main:app --reload
 ```
 
-Backend runs at:
+Backend runs on:
 
 ```text
 http://localhost:8000
 ```
+
+---
 
 ### Frontend Setup
 
@@ -168,26 +134,19 @@ npm install
 npm run dev
 ```
 
-Frontend runs at:
+Frontend runs on:
 
 ```text
 http://localhost:3000
 ```
 ---
 
-## Current Limitations
+## Author
 
-* Marathi voice depends on browser speech synthesis support.
-* Hindi and Marathi quality depends on the selected LLM.
-* Voice input integration is not yet enabled.
-* Knowledge is limited to the selected LLM unless RAG is added.
+**Navya Sharma**
 
 ---
 
-## Author
+## License
 
-Navya Sharma
-
-
-```
-```
+MIT License
