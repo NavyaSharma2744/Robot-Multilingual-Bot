@@ -143,8 +143,8 @@ http://localhost:3000
 
 ### Author
 
+Navya Sharma
 
-**Navya Sharma**
 ---
 
 ## License
